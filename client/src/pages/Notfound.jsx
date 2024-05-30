@@ -1,19 +1,27 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import {Link} from "react-router-dom"
+import {Button, Card} from 'react-bootstrap'
+import { Link } from 'react-router-dom';
+
 
 const NotFound = () => {
-  return (
-    <Container className="d-flex flex-column justify-content-center align-items-center" style={{ height: '100vh' }}>
-      <Row>
-        <Col className="text-center">
-          <h1 className="display-1">404</h1>
-          <p className="lead">Oops! The page you are looking for does not exist.</p>
-          <Button variant="primary">  <Link to="/Home">Go back Home</Link></Button>
-        </Col>
-      </Row>
-    </Container>
-  );
+return(
+  <div className="d-flex align-items-center justify-content-center vh-100">
+      <Card style={{ width: '18rem' }}>
+      
+      <Card.Body>
+      <Card.Img variant="top" src="data:image/png;base64,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" />
+
+        <Card.Title>OOPS!!!</Card.Title>
+        <Card.Title>404 - PAGE NOT FOUND</Card.Title>
+        <Card.Text>
+         The page your are looking for might have been removed had its name changed or is temporarily unavailable
+        </Card.Text>
+        <Link to = "/Home" ><Button variant="primary">BACK TO HOME</Button></Link>
+      </Card.Body>
+    </Card>
+  </div>
+
+)
 };
 
 export default NotFound;
