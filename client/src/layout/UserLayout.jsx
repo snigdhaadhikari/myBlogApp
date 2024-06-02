@@ -7,7 +7,9 @@ const UserLayout = () => {
   return (
     <div>
       <UserNavbar/>
-      <Outlet/>   
+      <main className='container' style={{height:'570px'}}>
+      <Outlet/>
+      </main>         
       <UserFooter/> 
   
     </div>

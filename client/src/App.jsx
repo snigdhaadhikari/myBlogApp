@@ -10,7 +10,11 @@ import Home from './pages/Home'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import BlogDetail from './pages/BlogDetail'
-import Blogs from './Blogs'
+
+
+// Admin Page
+// import BlogList from "./pages/admin/blogs/List"
+// import UserList from './pages/admin/users/List'
 
 
 const App = () => {
@@ -26,14 +30,15 @@ const App = () => {
         <Route index element = {<Home/>}/>
         <Route path = "contact" element = {<Contact/>}/>
         <Route path = "about" element = {<About/>}/>
-        <Route path = "blogs" element = {<Blogs/>}/>
         <Route path = "blogs/:id" element = {<BlogDetail/>}/>
 
       </Route>
-      <Route path = "/admin" element = {<AdminLayout/>}>
-        <Route path = "blogs" element = {<Home/>}/>
+      {/* <Route path = "/admin" element = {<AdminLayout/>}>
+        <Route index element = {<BlogList/>}/>
+        <Route path = "blogs" element = {<BlogList/>}/>
+        <Route path = "users" element = {<UserList/>}/>
       </Route>
-      <Route path = "*" element = {<Notfound/>}/>
+      <Route path = "*" element = {<Notfound/>}/> */}
 
       
     </Routes>
