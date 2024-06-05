@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Notify from '../components/Alert'
 
 import { login } from "../services/users"
-import {setToken} from "../utils/token"
+import {getToken, setToken} from "../utils/token"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -23,13 +23,19 @@ const Login = () => {
       }
     }
   catch (e) {
-    setError(e.message); // Set the error message
+    setError(e.message); 
   } finally {
     setTimeout(() => {
       setError('');
-    }, 3000); // Corrected setTimeout syntax
+    }, 3000); 
   }
 };
+useEffect(()=>{
+  const token = getToken();
+  if(token){
+    navigate("/")
+  }
+},[navigate])
 
   return (
     <div className="d-flex justify-content-center vh-100">

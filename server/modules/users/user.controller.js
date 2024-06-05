@@ -74,11 +74,11 @@ const register = async (payload) => {
   const user = await userModel.create(payload);
   if (!user) throw new Error("Registration failed");
   // email send
-  await mail(
-    user.email,
-    "Registration Completed",
-    "You are successfully registered. Thank you for registering."
-  );
+  // await mail(
+  //   user.email,
+  //   "Registration Completed",
+  //   "You are successfully registered. Thank you for registering."
+  // );
   return { success: true, message: "Registration Completed" };
 };
 
